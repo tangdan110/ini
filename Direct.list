@@ -13,8 +13,8 @@ DOMAIN-KEYWORD,baidu
 IP-CIDR,219.146.1.66/32,no-resolve
 
 
-# 数据目标端口匹配
-SRC-PORT,9053,DIRECT
+# 进程
+PROCESS-reverse1999.exe,curl,DIRECT
 
 # 国内DNS
 DOMAIN-SUFFIX,dns.alidns.com
