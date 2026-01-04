@@ -198,6 +198,9 @@ DOMAIN-SUFFIX,hbogo.com
 DOMAIN-SUFFIX,hbomax.com
 DOMAIN-SUFFIX,hbomaxcdn.com
 DOMAIN-SUFFIX,hbonow.com
+DOMAIN-SUFFIX,images.cdn.prd.api.discomax.com
+DOMAIN-SUFFIX,api.discomax.com
+
 
 # HBO_GO_HKG
 USER-AGENT,HBO%20GO%20PROD*
