@@ -7,6 +7,11 @@
 # PROCESS-NAME: 1
 # TOTAL: 8
 DOMAIN,hls-amt.itunes.apple.com
+DOMAIN,bag.itunes.apple.com
+DOMAIN,init.itunes.apple.com
+DOMAIN,guzzoni.apple.com
+DOMAIN,amp-api-edge.apps.apple.com
+DOMAIN,cstat.cdn-apple.com
 DOMAIN,hls.itunes.apple.com
 DOMAIN,np-edge.itunes.apple.com
 DOMAIN,play-edge.itunes.apple.com
