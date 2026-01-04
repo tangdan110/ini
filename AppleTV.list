@@ -20,6 +20,7 @@ DOMAIN,uts-api.itunes.apple.com
 DOMAIN-SUFFIX,tv.apple.com
 DOMAIN,np-edge.itunes.apple.com
 DOMAIN,play-edge.itunes.apple.com
-DOMAIN-SUFFIX,tv.apple.com
+
+
 
 PROCESS-NAME,TV
