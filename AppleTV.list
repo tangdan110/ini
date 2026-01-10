@@ -2,6 +2,7 @@
 ; Apple TV 系统 / 商店 / 设备服务（美国）
 ;==============================
 ruleset=🍎 AppleTV,SRC-IP-CIDR,10.10.10.74/32
+ruleset=🍎 AppleTV,SRC-IP-CIDR,10.10.10.102/32
 ruleset=🍎 AppleTV,[]DOMAIN-SUFFIX,apple.com
 ruleset=🍎 AppleTV,[]DOMAIN-SUFFIX,icloud.com
 ruleset=🍎 AppleTV,[]DOMAIN-SUFFIX,itunes.apple.com
