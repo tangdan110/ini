@@ -1,8 +1,9 @@
-# Apple 系统 & 商店（直连）
-DOMAIN-SUFFIX,apple.com,DIRECT
-DOMAIN-SUFFIX,icloud.com,DIRECT
-DOMAIN-SUFFIX,itunes.apple.com,DIRECT
-DOMAIN-SUFFIX,xp.apple.com,DIRECT
-DOMAIN-SUFFIX,guzzoni.apple.com,DIRECT
-DOMAIN-SUFFIX,apps.apple.com,DIRECT
-
+;==============================
+; Apple TV 系统 / 商店 / 设备服务（美国）
+;==============================
+ruleset=🍎 AppleTV,[]DOMAIN-SUFFIX,apple.com
+ruleset=🍎 AppleTV,[]DOMAIN-SUFFIX,icloud.com
+ruleset=🍎 AppleTV,[]DOMAIN-SUFFIX,itunes.apple.com
+ruleset=🍎 AppleTV,[]DOMAIN-SUFFIX,apps.apple.com
+ruleset=🍎 AppleTV,[]DOMAIN-SUFFIX,xp.apple.com
+ruleset=🍎 AppleTV,[]DOMAIN-SUFFIX,guzzoni.apple.com
