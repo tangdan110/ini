@@ -1,0 +1,54 @@
+;================================================================
+; 1. 核心精简分流规则 (直接写死，拒绝外部拉取，秒加载)
+;================================================================
+
+; --- PS5 专属 UDP 游戏分流 (假设你给 PS5 分配了固定 IP: 192.168.50.50) ---
+; 务必把 192.168.50.50 替换成你 PS5 真实的局域网 IP
+ruleset=🎮 PS5联机,[]SRC-IP,192.168.50.50
+
+; --- Max / HBO 精准鉴权与内容分流 ---
+ruleset=🇺🇸 Max-US,[]DOMAIN-SUFFIX,max.com
+ruleset=🇺🇸 Max-US,[]DOMAIN-SUFFIX,discomax.com
+ruleset=🇺🇸 Max-US,[]DOMAIN-SUFFIX,hbomax.com
+ruleset=🇺🇸 Max-US,[]DOMAIN-SUFFIX,hbo.com
+ruleset=🇸🇬 Max-SG,[]DOMAIN-KEYWORD,media.max.com
+
+; --- 国内直连 (利用内置 GEO 数据库，替代庞大的国内规则列表) ---
+ruleset=🎯 全球直连,[]GEOSITE,CN
+ruleset=🎯 全球直连,[]GEOIP,CN
+
+; --- 兜底规则 (凡是不在国内的，全走代理) ---
+ruleset=🚀 节点选择,[]GEOSITE,geolocation-!cn
+ruleset=🐟 漏网之鱼,[]FINAL
+
+
+;================================================================
+; 2. 策略组定义 (去除了多余的测速和不相关的组)
+;================================================================
+
+; 节点大厅
+custom_proxy_group=🚀 节点选择`select`[]🇭🇰 香港节点`[]🇯🇵 日本节点`[]🇸🇬 加坡节点`[]🇺🇸 美国节点
+
+; PS5 专属组：玩联机游戏极其看重 UDP 和低延迟。
+; 建议这里优先选择离你物理距离最近的节点（如香港或日本），不要选自动或美国节点。
+custom_proxy_group=🎮 PS5联机`select`[]🇭🇰 香港节点`[]🇯🇵 日本节点`[]🚀 节点选择`[]DIRECT
+
+; HBO 专属组
+custom_proxy_group=🇺🇸 Max-US`select`[]🇺🇸 美国节点`[]🇸🇬 加坡节点
+custom_proxy_group=🇸🇬 Max-SG`select`[]🇸🇬 加坡节点
+
+; 直连与兜底组
+custom_proxy_group=🎯 全球直连`select`[]DIRECT
+custom_proxy_group=🐟 漏网之鱼`select`[]🚀 节点选择
+
+
+;================================================================
+; 3. 节点地区正则提取 (保留了你写得很棒的地区抓取代码)
+;================================================================
+custom_proxy_group=🇭🇰 香港节点`select`.*(香港|HK|Hong\s?Kong|🇭🇰).*
+custom_proxy_group=🇯🇵 日本节点`select`.*(日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan|🇯🇵).*
+custom_proxy_group=🇸🇬 加坡节点`select`.*(新加坡|坡|狮城|SG|Singapore|🇸🇬).*
+custom_proxy_group=🇺🇸 美国节点`select`.*(美国|US|USA|United\s?States|🇺🇸).*
+
+enable_rule_generator=true
+overwrite_original_rules=true
