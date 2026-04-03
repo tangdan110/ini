@@ -4,7 +4,7 @@
 
 ; --- PS5 专属 UDP 游戏分流 (假设你给 PS5 分配了固定 IP: 192.168.50.50) ---
 ; 务必把 192.168.50.50 替换成你 PS5 真实的局域网 IP
-ruleset=🎮 PS5联机,[]SRC-IP,192.168.50.50
+ruleset=🎮 PS5联机,[]SRC-IP-CIDR,192.168.50.50/32
 
 ; --- Max / HBO 精准鉴权与内容分流 ---
 ruleset=🇺🇸 Max-US,[]DOMAIN-SUFFIX,max.com
